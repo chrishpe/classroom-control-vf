@@ -57,7 +57,7 @@ node default {
     path   => '/usr/local/bin',
   }
 
-  host { 'localhost.localdomain':
+  host { 'testing.puppetlabs.vm':
     ensure       => 'present',
     target       => '/etc/hosts',
     ip           => '127.0.0.1',
