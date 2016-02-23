@@ -69,7 +69,7 @@ node default {
 #    host_aliases => ['testing.puppetlabs.vm']
 #  }
 
-  include skeleton
-  include users
+#  include skeleton
+#  include users
   
 }
