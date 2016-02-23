@@ -52,21 +52,23 @@ node default {
 #    content => "Hey, Puppet is lots of fun!\n",
 #  }
 
-  package { 'cowsay':
-    ensure => present,
-    provider => gem,
-  }
+#  package { 'cowsay':
+#    ensure => present,
+#    provider => gem,
+#  }
 
-  exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd" :
-    creates => '/etc/motd',
-    path   => '/usr/local/bin',
-  }
+#  exec {"cowsay 'Welcome to ${::fqdn}!' > /etc/motd" :
+#    creates => '/etc/motd',
+#    path   => '/usr/local/bin',
+#  }
 
-  host { 'testing.puppetlabs.vm':
-    ensure       => 'present',
-    target       => '/etc/hosts',
-    ip           => '127.0.0.1',
-    host_aliases => ['testing.puppetlabs.vm']
-  }
+#  host { 'testing.puppetlabs.vm':
+#    ensure       => 'present',
+#    target       => '/etc/hosts',
+#    ip           => '127.0.0.1',
+#    host_aliases => ['testing.puppetlabs.vm']
+#  }
+  
+  include users
 
 }
