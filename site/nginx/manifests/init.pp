@@ -14,7 +14,7 @@ class nginx{
     #mtime   => '2016-01-26 18:15:47 +0000',
     owner   => '0',
     #type    => 'file',
-    require   => Package
+    require   => Package['nginx'],
   }
 
   file { '/etc/nginx/conf.d/default.conf':
