@@ -42,7 +42,7 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Hello, my name is ${::hostname}": }
+  notify { "Hello, my name is ${::hostname} and release is 13.2 or greater": }
   
 #  file { '/etc/motd':
 #    ensure  => file,
@@ -73,4 +73,9 @@ node default {
 #  include users
 #  include memcached
   include nginx
+  
+  Add a notification in your site manifest to display a notice if the agent is
+a virtual machine. Display the VM type capitalized.
+  
+  notify {"capitalize(${::virtual})":}
 }
