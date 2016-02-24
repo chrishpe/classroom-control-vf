@@ -80,7 +80,7 @@ node default {
 #    admin => 'fundamentals',
 #  }
  
- user::managed_user{ ['fundamentals', 'test', 'anothertest']:
+ users::managed_user{ ['fundamentals', 'test', 'anothertest']:
  }
   
 }
