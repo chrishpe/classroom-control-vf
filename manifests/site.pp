@@ -76,5 +76,5 @@ node default {
 #  include memcached
   include nginx
   
-  notify {"capitalize(${::virtual})":}
+  notify {capitalize("${::virtual}"):}
 }
