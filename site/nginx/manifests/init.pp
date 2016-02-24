@@ -2,7 +2,7 @@ class nginx{
 $package_name   = 'nginx'
 $owner          = 'root'
 $group          = $owner
-$doc_root       = '/var/www'
+$doc_root       = '/var/www/test'
 $conf_dir       = '/etc/nginx'
 $block_dir      = "${conf_dir}/conf.d"
 $logdir         = "/var/log/${package_name}"
@@ -27,14 +27,16 @@ File{
   #file { '/etc/nginx/nginx.conf':
   file { "${conf_dir}/${package_name}.conf":
     ensure    => 'file',
-    source    => 'puppet:///modules/nginx/nginx.conf',
+    #source    => 'puppet:///modules/nginx/nginx.conf',
+    content => template('nginx/nginx.conf.erb'),
     require   => Package[$package_name],
   }
 
   #file { '/etc/nginx/conf.d/default.conf":
   file { "${block_dir}/default.conf":
     ensure  => 'file',
-    source  => 'puppet:///modules/nginx/default.conf',
+    #source  => 'puppet:///modules/nginx/default.conf',
+    content => template('nginx/default.conf.erb'),
     require => Package[$package_name],
   }
   
