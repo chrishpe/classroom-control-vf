@@ -3,7 +3,7 @@
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
 #user              nginx;
-user            <%= @service_user %>
+user            <%= @service_user %>;
 worker_processes  1;
 
 error_log  <%= @logdir %>/error.log;
