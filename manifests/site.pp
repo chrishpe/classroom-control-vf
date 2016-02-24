@@ -74,15 +74,15 @@ node default {
 #  include skeleton
 #  include users
 #  include memcached
-#  include nginx
+  include nginx
   
 #  class{'aliases':
 #    admin => 'fundamentals',
 #  }
  
- users::managed_user{ ['fundamentals', 'test', 'anothertest']:
- }
+ #users::managed_user{ ['fundamentals', 'test', 'anothertest']:
+ #}
  
- include users::admins
+ #include users::admins
   
 }
