@@ -9,6 +9,9 @@ class nginx(
   $service_name     = $::nginx::params::service_name,
 ) inherits params {
 
+#HACK
+$doc_root = $default_doc_root
+
   File{
     owner => '0',
     group => '0',
