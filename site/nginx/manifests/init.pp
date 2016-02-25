@@ -1,12 +1,19 @@
 class nginx(
-  $root       = undef
-){
+  $package_name     = $::nginx::params::package_name,
+  $owner            = $::nginx::params::owner,
+  $group            = $::nginx::params::group,
+  $default_doc_root = $::nginx::params::default_doc_root,
+  $conf_dir         = $::nginx::params::conf_dir,
+  $block_dir        = $::nginx::params::block_dir,
+  $logdir           = $::nginx::params::logdir,
+  $service_name     = $::nginx::params::service_name,
+) inherits params {
 
-File{
-  owner => '0',
-  group => '0',
-  mode  => '0644',
-}
+  File{
+    owner => '0',
+    group => '0',
+    mode  => '0644',
+  }
 
   package{ $package_name:
     ensure  => present,
