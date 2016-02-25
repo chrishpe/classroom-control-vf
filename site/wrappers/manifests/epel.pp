@@ -1,1 +1,3 @@
-include '::epel'
+class wrappers::epel{
+  include '::epel'
+}
