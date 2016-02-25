@@ -1,4 +1,4 @@
-class params{
+class nginx::params{
 
 $package_name     = 'nginx'
 $owner            = 'root'
