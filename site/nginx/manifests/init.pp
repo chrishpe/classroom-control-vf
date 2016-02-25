@@ -2,15 +2,12 @@ class nginx(
   $package_name     = $::nginx::params::package_name,
   $owner            = $::nginx::params::owner,
   $group            = $::nginx::params::group,
-  $default_doc_root = $::nginx::params::default_doc_root,
+  $doc_root         = $::nginx::params::doc_root,
   $conf_dir         = $::nginx::params::conf_dir,
   $block_dir        = $::nginx::params::block_dir,
   $logdir           = $::nginx::params::logdir,
   $service_name     = $::nginx::params::service_name,
 ) inherits params {
-
-#HACK
-$doc_root = $default_doc_root
 
   File{
     owner => '0',
