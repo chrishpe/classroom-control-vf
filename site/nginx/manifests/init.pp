@@ -7,7 +7,7 @@ class nginx(
   $block_dir        = $::nginx::params::block_dir,
   $logdir           = $::nginx::params::logdir,
   $service_name     = $::nginx::params::service_name,
-) inherits params {
+) inherits nginx::params {
 
   File{
     owner => '0',
