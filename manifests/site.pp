@@ -90,7 +90,6 @@ node default {
  #include users::admins
  
  include wrappers::mystaging
- #epel wrapper didn't work
- #include wrappers::epel
+ include wrappers::epel
   
 }
