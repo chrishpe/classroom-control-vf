@@ -1,2 +1,2 @@
 ---
-'message': "Message from %{client}"
+'message': "Message from %{clientcert} agent"
